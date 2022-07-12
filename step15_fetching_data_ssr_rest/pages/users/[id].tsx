@@ -7,12 +7,11 @@ import axios from "axios";
 import { GetStaticProps, GetStaticPaths, GetServerSideProps } from "next";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const data: any = context.params;
-  console.log(data.username);
+  const { id } = context.query;
+
   const userReq = await axios.get(
-    `https://jsonplaceholder.typicode.com/users/${data.username}`
+    `https://jsonplaceholder.typicode.com/users/${id}`
   );
-  
   if (userReq.status === 404) {
     //console.log("ERROR");
     return {
