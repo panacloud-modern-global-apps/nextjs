@@ -14,7 +14,7 @@ function List({users}: {users: User[]}) {
       {
         users.map((user) =>
           <li key={user.id}>
-          <Link href={`/users/${user.username}`} passHref>
+          <Link href={`/users/${user.id}`} passHref>
             <a> {user.username} </a>
           </Link>
          </li>
@@ -32,7 +32,7 @@ const Home: NextPage = () => {
   const [data, setData] = useState<User[]>([]);
 
   const getUsers = async () => {
-    const req = await fetch('https://api.rwnjs.com/04/users');
+    const req = await fetch('https://jsonplaceholder.typicode.com/users');
     const users = await req.json();
     setLoading(false);
     setData(users);
