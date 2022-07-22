@@ -4,16 +4,29 @@ Read pages 80-89 of Chapter 4 of the [Real World Next.js](https://www.packtpub.c
 
 Read GetStaticPaths and GetStaticProps official [documentation](https://nextjs.org/docs/basic-features/data-fetching/get-static-paths)
 
-To Create Project give the following command:
+- To Create  new Project run the following command:
 
-Create the pages/index.tsx and pages/users/[username].tsx file
+`npx create-next-app step16_FETCHING_DATA_SSG_REST`
 
-npm run dev
+- Update Index.tsx file to fetch data from API  
+
+- Create the pages/ind-ex.tsx and pages/users/[id].tsx file
+
+ _we have used getStaticProps and getStaticPaths features of Next.js to create static site and generate dynmic path for static content_
+
+- Now run project in development mode by running 
+
+`npm run dev`
 
 Now open the project in the browser:
 
 http://localhost:3000
 
+*Note : If you want to check how many pages are created at build time, make build of your project by running :*
+
+ `npm run build` 
+
+ In terminal console , you can see how many pages created statically and dynamically. 
 
 
 
